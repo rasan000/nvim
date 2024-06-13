@@ -1,5 +1,5 @@
---クリップボードを有効か
-vim.opt.clipboard="unnamed,unnamedplus"
+--クリップボードを有効
+-- vim.opt.clipboard="unnamed,unnamedplus"
 
 -- 行番号と相対行番号を表示する
 vim.opt.number = true
