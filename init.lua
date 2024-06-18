@@ -1,6 +1,7 @@
 if not vim.g.vscode then
     require("keymap")
+    require("option")
     require("plugin")
 else
-    -- vim.opt.clipboard="unnamed,unnamedplus"
+    --for vscode
 end
