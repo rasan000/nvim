@@ -3,5 +3,5 @@ if not vim.g.vscode then
     require("option")
     require("plugin")
 else
-    require("vscode")
+    require("code")
 end
