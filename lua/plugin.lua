@@ -72,16 +72,12 @@ require("lazy").setup({
     },
     -- comment
     {
-        'echasnovski/mini.comment',
+    'echasnovski/mini.comment',
         config = function()
             require('mini.comment').setup()
         end
     },
 
-    -- telescope
-    {
-        'nvim-telescope/telescope.nvim', tag = '0.1.6'
-    },
     --terminal
     {
         'akinsho/toggleterm.nvim',
@@ -102,7 +98,57 @@ require("lazy").setup({
         config = function()
             require('nvim-cursorline').setup()
         end
-    }   
-
+    },
+    
+    --copilot
+    {
+        'github/copilot.vim',
+        lazy=false
+    },
+    {
+        'nvim-telescope/telescope.nvim', tag = '0.1.6',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+        config = function()
+            require('telescope').setup()
+            vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true })
+        end
+    },
+    {
+        'dinhhuy258/git.nvim',
+    },
+    {
+        'sainnhe/everforest',
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.g.everforest_enable_italic = true
+            vim.cmd.colorscheme('everforest')
+        end
+    },
+    {
+        'dinhhuy258/git.nvim',
+        config = function()
+            require('git').setup()
+        end
+    },
+    {
+        'lukas-reineke/indent-blankline.nvim',
+        config = function()
+            require('ibl').setup()
+        end
+    },
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        config = function()
+            require('lualine').setup()
+        end
+    },
+    {
+        'karb94/neoscroll.nvim',
+        config = function()
+            require('neoscroll').setup()
+        end
+    }
 })
 

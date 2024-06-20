@@ -26,9 +26,5 @@ vim.opt.smartcase = true
 
 -- その他
 vim.opt.showmatch = true
-
--- 色
-vim.opt.termguicolors = true
-
 -- leader
 vim.g.mapleader = " "
