@@ -19,7 +19,12 @@ require("lazy").setup({
         'nvim-tree/nvim-tree.lua',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function ()
-            require('nvim-tree').setup()
+            require('nvim-tree').setup({
+                view = {
+                    width = 30,
+                    side = 'left'
+                }
+            })
             vim.api.nvim_create_user_command('Ex', function () vim.cmd.NvimTreeToggle() end, {})
         end
     },
@@ -31,7 +36,7 @@ require("lazy").setup({
             local configs = require("nvim-treesitter.configs")
 
             configs.setup({
-                ensure_installed = {"c", "lua", "vim", "vimdoc", "javascript", "typescript"},
+                ensure_installed = {"c","json","kotlin", "lua", "vim", "vimdoc", "javascript", "typescript"},
                 sync_install = false,
                 highlight = { enable = true },
                 indent = { enable = true },
@@ -46,9 +51,7 @@ require("lazy").setup({
         version = "*", -- Use for stability; omit to use `main` branch for the latest features
         event = "VeryLazy",
         config = function()
-            require("nvim-surround").setup({
-                -- Configuration here, or leave empty to use defaults
-            })
+            require("nvim-surround").setup({ })
         end
     }, 
 
@@ -74,13 +77,32 @@ require("lazy").setup({
             require('mini.comment').setup()
         end
     },
+
     -- telescope
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.6'
     },
     --terminal
     {
-        'akinsho/toggleterm.nvim', version = "*", config = true
-    }
+        'akinsho/toggleterm.nvim',
+        config = function()
+            require("toggleterm").setup({
+                size = 20,
+                open_mapping = [[<c-\>]],
+                direction = 'horizontal',  -- 浮動ウィンドウに設定
+                border = 'double',  -- または 'single', 'shadow', 'curved'
+            })
+            vim.api.nvim_create_user_command('Term', function() require('toggleterm').toggle() end, {})
+        end
+    },
+
+    -- cursorlline
+    {
+        'yamatsum/nvim-cursorline',
+        config = function()
+            require('nvim-cursorline').setup()
+        end
+    }   
+
 })
 
