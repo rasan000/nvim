@@ -1,5 +1,7 @@
 -- ヘルプを日本語表記に
 vim.opt.helplang= 'ja','en'
+--コマンド候補
+vim.opt.wildmenu = true
 
 -- netrwを無効化
 vim.g.loaded_netrw = 1
@@ -57,3 +59,22 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank({ higroup = 'YankHighlight', timeout = 200 })
   end,
 })
+
+-- IMEをONOFFする。
+-- ZENHANのパスが通っていることが前提
+vim.cmd [[
+    let &shell='/usr/bin/bash --login'
+    autocmd InsertLeave * :call system('${zenhan} 0')
+    autocmd CmdlineLeave * :call system('${zenhan} 0')
+]]
+
+-- 開いた時にカレントディレクトリを変更する
+vim.api.nvim_create_autocmd("VimEnter", {
+  pattern = "*",
+  callback = function()
+    vim.cmd("cd " .. vim.fn.expand("%:p:h"))
+  end,
+})
+
+-- 少し透明にする
+vim.opt.winblend = 5

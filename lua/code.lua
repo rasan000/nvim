@@ -1,6 +1,14 @@
 -- クリップボード連携
 vim.opt.clipboard = 'unnamedplus'
 
+
+-- IMEをONOFFする。
+-- ZENHANのパスが通っていることが前提
+vim.cmd [[
+    let &shell='/usr/bin/bash --login'
+    autocmd InsertLeave * :call system('${zenhan} 0')
+    autocmd CmdlineLeave * :call system('${zenhan} 0')
+]]
 -- プラグイン
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -27,7 +35,7 @@ require("lazy").setup({
                 -- Configuration here, or leave empty to use defaults
             })
         end
-    }, 
+    },
     {
         'echasnovski/mini.comment',
         config = function()
@@ -36,3 +44,8 @@ require("lazy").setup({
     },
 })
 
+--keymap 系
+vim.keymap.set ( 'n', 'x', '"_x' )
+vim.keymap.set ( 'v', 'x', '"_x' )
+vim.keymap.set ( 'n', 'X', '"_X' )
+vim.keymap.set ( 'v', 'X', '"_X' )
