@@ -220,7 +220,7 @@ require('lazy').setup({
                 augroup END
                 ]])
 
-            vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>Fern . -reveal=%<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>Fern . -drawer -toggle -reveal=%<CR>', { noremap = true, silent = true })
         end
     },
     {'lambdalisue/fern-renderer-nerdfont.vim'},
