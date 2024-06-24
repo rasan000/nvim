@@ -36,7 +36,9 @@ require('lazy').setup({
     {
         'romgrk/barbar.nvim',
         config = function()
-            require('barbar').setup()
+            require('barbar').setup({
+                auto_hide = true,
+            })
             vim.api.nvim_set_keymap('n', '<C-j>', '<cmd>BufferPrevious<CR>', { noremap = true, silent = true })
             vim.api.nvim_set_keymap('n', '<C-k>', '<cmd>BufferNext<CR>', { noremap = true, silent = true })
             vim.api.nvim_set_keymap('n', '<leader>e', '<Cmd>BufferClose<CR>', { noremap = true, silent = true })
@@ -202,11 +204,23 @@ require('lazy').setup({
     -- Fern file_manager
     {
         'lambdalisue/fern.vim',
+        lazy = false,
+        priority = 1000,
         requires = { 'lambdalisue/fern-renderer-nerdfont.vim', 'lambdalisue/nerdfont.vim', 'lambdalisue/glyph-palette.vim', 'lambdalisue/fern-git-status.vim' },
         config = function()
-            vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>Fern . -reveal=%<CR>', { noremap = true, silent = true })
             vim.g['fern#renderer'] = 'nerdfont'
+
             vim.g['fern#default_hidden'] = 1
+
+            vim.cmd([[
+                augroup my-glyph-palette
+                autocmd! *
+                autocmd FileType fern call glyph_palette#apply()
+                autocmd FileType nerdtree,startify call glyph_palette#apply()
+                augroup END
+                ]])
+
+            vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>Fern . -reveal=%<CR>', { noremap = true, silent = true })
         end
     },
     {'lambdalisue/fern-renderer-nerdfont.vim'},

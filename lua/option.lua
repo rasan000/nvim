@@ -10,6 +10,8 @@ vim.g.loaded_netrwPlugin = 1
 -- クリップボード連携
 vim.opt.clipboard = 'unnamedplus'
 
+-- ちらつきぼうし
+vim.opt.showtabline = 1
 -- 文字コード
 vim.opt.fileencoding = "utf-8"
 vim.scriptencoding = "utf-8"
