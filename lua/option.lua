@@ -44,8 +44,8 @@ vim.opt.mouse = "a"
 vim.opt.hidden = true
 vim.opt.swapfile = false
 
--- shellはfishを使う
-vim.opt.shell = 'fish'
+-- fishだとzenhanの切り替えがうまく動かなかったのでなし
+-- vim.opt.shell = 'fish'
 
 -- タイトルを出す
 vim.opt.title = true
