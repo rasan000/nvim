@@ -202,6 +202,7 @@ require('lazy').setup({
     -- Fern file_manager
     {
         'lambdalisue/fern.vim',
+        requires = { 'lambdalisue/fern-renderer-nerdfont.vim', 'lambdalisue/nerdfont.vim', 'lambdalisue/glyph-palette.vim', 'lambdalisue/fern-git-status.vim' },
         config = function()
             vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>Fern . -reveal=%<CR>', { noremap = true, silent = true })
             vim.g['fern#renderer'] = 'nerdfont'
