@@ -1,0 +1,1 @@
+/home/iino/.config/fish

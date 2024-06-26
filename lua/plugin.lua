@@ -23,7 +23,7 @@ require('lazy').setup({
             local configs = require('nvim-treesitter.configs')
 
             configs.setup({
-                ensure_installed = {'c','json','kotlin', 'lua','fish','dockerfile','kotlin', 'vim', 'vimdoc', 'javascript', 'typescript'},
+                ensure_installed = {'c','yaml','xml','sql','java','bash','json','fish','markdown','c_sharp','html','css','python','kotlin', 'lua','fish','dockerfile','kotlin', 'vim', 'vimdoc', 'javascript', 'typescript'},
                 sync_install = false,
                 highlight = { enable = true },
                 indent = { enable = true },
@@ -167,6 +167,9 @@ require('lazy').setup({
             vim.api.nvim_set_keymap('n', '<leader>fl', '<cmd>Telescope.extensions.frecency.frecency()<CR>', { noremap = true, silent = true })
         end,
     },
+    {
+        'BurntSushi/ripgrep',
+    },
     --color scheme
     {
         'EdenEast/nightfox.nvim',
@@ -220,7 +223,7 @@ require('lazy').setup({
                 augroup END
                 ]])
 
-            vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>Fern . -drawer -toggle -reveal=%<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>Fern . -drawer -toggle -width=60 -reveal=%<CR>', { noremap = true, silent = true })
         end
     },
     {'lambdalisue/fern-renderer-nerdfont.vim'},
@@ -257,6 +260,21 @@ require('lazy').setup({
             
         end
     }, 
+
+    --chat
+    {
+        "CopilotC-Nvim/CopilotChat.nvim",
+        branch = "canary",
+        dependencies = {
+            { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
+            { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+        },
+        opts = {
+            debug = true, -- Enable debugging
+            -- See Configuration section for rest
+        },
+        vim.api.nvim_set_keymap('n', '<leader>p', '<Cmd>CopilotChatToggle<CR>', {})
+    }
 })
 
 
