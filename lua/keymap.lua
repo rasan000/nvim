@@ -17,7 +17,7 @@ vim.api.nvim_set_keymap('i', 'jk', '<ESC>:w<CR>', { noremap = true, silent = tru
 
 -- 保存はctrl + s
 vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'sw', ':wq<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'sw', ':w<CR>', { noremap = true, silent = true })
 
 -- ウィンドウ分割
 vim.api.nvim_set_keymap('n', 'ss', ':split<Return><C-w>w', { noremap = true, silent = true })
