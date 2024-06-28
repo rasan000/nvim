@@ -32,6 +32,13 @@ require('lazy').setup({
         end
     },
 
+    -- auto session
+    {
+        'rmagatti/auto-session',
+        config = function()
+            require('auto-session').setup()
+        end
+    },
     --barbar
     {
         'romgrk/barbar.nvim',
@@ -188,6 +195,13 @@ require('lazy').setup({
         end
     },
 
+    -- icons
+    {
+        'kyazdani42/nvim-web-devicons',
+        config = function()
+            require('nvim-web-devicons').setup()
+        end
+    },
     -- lualine
     {
         'nvim-lualine/lualine.nvim',
