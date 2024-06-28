@@ -40,8 +40,10 @@ require('lazy').setup({
                 auto_hide = true,
             })
             vim.api.nvim_set_keymap('n', '<C-j>', '<cmd>BufferPrevious<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<C-k>', '<cmd>BufferNext<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<C-k>', '<cmd>BufferNest<CR>', { noremap = true, silent = true })
             vim.api.nvim_set_keymap('n', '<leader>e', '<Cmd>BufferClose<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>e', '<Cmd>BufferCloseAllButCurrent<CR>', { noremap = true, silent = true })
+            
         end
     },
 
@@ -214,7 +216,7 @@ require('lazy').setup({
                 augroup END
                 ]])
 
-            vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>Fern . -drawer -toggle -width=60 -reveal=%<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>Fern . -drawer -toggle -width=40 -reveal=%<CR>', { noremap = true, silent = true })
         end
     },
     {'lambdalisue/fern-renderer-nerdfont.vim'},
@@ -234,8 +236,8 @@ require('lazy').setup({
     {
         'easymotion/vim-easymotion',
         config = function()
-            vim.api.nvim_set_keymap('n', '<leader>f', '<Plug>(easymotion-overwin-f)', {})
-            vim.api.nvim_set_keymap('n', '<leader>s', '<Plug>(easymotion-overwin-f2)', {})
+            vim.api.nvim_set_keymap('n', 'f', '<Plug>(easymotion-overwin-f)', {})
+            vim.api.nvim_set_keymap('n', 's', '<Plug>(easymotion-overwin-f2)', {})
             vim.api.nvim_set_keymap('n', '<leader>w', '<Plug>(easymotion-overwin-w)', {})
             vim.api.nvim_set_keymap('n', '<leader>l', '<Plug>(easymotion-overwin-line)', {})
         end

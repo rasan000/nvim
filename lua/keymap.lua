@@ -17,12 +17,12 @@ vim.api.nvim_set_keymap('i', 'jk', '<ESC>:w<CR>', { noremap = true, silent = tru
 
 -- 保存はctrl + s
 vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
-
--- ウィンドウ分割
+vim.api.nvim_set_keymap('n', 'sw', ':wq<CR>', { noremap = true, silent = true })
 
 -- ウィンドウ分割
 vim.api.nvim_set_keymap('n', 'ss', ':split<Return><C-w>w', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'sv', ':vsplit<Return><C-w>w', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'sq', ':q<Return>', { noremap = true, silent = true })
 
 -- ウィンドウ間の移動
 vim.api.nvim_set_keymap('n', 'sh', '<C-w>h', { noremap = true, silent = true })
@@ -42,6 +42,10 @@ vim.api.nvim_set_keymap('i', '<C-b>', '<Left>', { noremap = true, silent = true 
 
 -- leader+rで:%s///g
 vim.api.nvim_set_keymap('n', '<leader>r', ':%s///g<Left><Left><Left>', { noremap = true, silent = true })
+
+
+-- leader+cでカレントフォルダを現在のフォルダに変更する
+vim.api.nvim_set_keymap('n', '<leader>c', ':lcd %:p:h<CR>', { noremap = true, silent = true })
 
 --設定ファイルを開く
 vim.api.nvim_set_keymap('n', '<F1>', ':edit $MYVIMRC<CR>', { noremap = true, silent = true })

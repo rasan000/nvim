@@ -45,7 +45,7 @@ vim.opt.hidden = true
 vim.opt.swapfile = false
 
 -- fishだとzenhanの切り替えがうまく動かなかったのでなし
--- vim.opt.shell = 'fish'
+vim.opt.shell = 'fish'
 
 -- タイトルを出す
 vim.opt.title = true
@@ -74,7 +74,7 @@ vim.cmd [[
 vim.api.nvim_create_autocmd("VimEnter", {
   pattern = "*",
   callback = function()
-    vim.cmd("cd " .. vim.fn.expand("%:p:h"))
+    vim.cmd("lcd " .. vim.fn.expand("%:p:h"))
   end,
 })
 
