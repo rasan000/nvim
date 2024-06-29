@@ -1,5 +1,7 @@
 # overview
-neovimの自分用設定ファイル
+- neovimの自分用設定ファイル
+- coc用のファイルも含む
+- clone後、nvimとcocのファイルをそれぞれ~/.config直下に配置してください
 
 # imeの自動切り替えについて
 1. wslに以下をインストール

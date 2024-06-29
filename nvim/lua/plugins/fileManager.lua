@@ -6,7 +6,7 @@ return {
             require('nvim-tree').setup({
                 view = { width = 40, side = 'left'}, 
 
-                filters = { custom = { '^node_modules/', '^.git'} }, 
+                filters = { custom = { 'node_modules/', '.git/'} }, 
                 --デフォルト設定-- ここでデフォルトmapping込みの設定にすり替え
                 on_attach = function(bufnr)
                     local api = require "nvim-tree.api"

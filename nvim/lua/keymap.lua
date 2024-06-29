@@ -53,4 +53,5 @@ vim.api.nvim_set_keymap('n', '<leader>r', ':%s///g<Left><Left><Left>', { noremap
 vim.api.nvim_set_keymap('n', '<leader>c', ':lcd %:p:h<CR>', { noremap = true, silent = true })
 
 --設定ファイルを開く
-vim.api.nvim_set_keymap('n', '<F1>', ':edit $MYVIMRC<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader><F1>', ':edit $MYVIMRC<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader><F2>', ':CocCommand snippets.editSnippets<CR>', { noremap = true, silent = true })

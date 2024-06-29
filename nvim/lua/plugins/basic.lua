@@ -74,13 +74,6 @@ return {
         end
     },
 
-    -- icons
-    {
-        'kyazdani42/nvim-web-devicons',
-        config = function()
-            require('nvim-web-devicons').setup()
-        end
-    },
     -- lualine
     {
         'nvim-lualine/lualine.nvim',

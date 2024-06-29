@@ -1,0 +1,15 @@
+# Ignore everything
+*
+
+# Except the nvim and coc folders
+!nvim/
+!coc/
+
+# Inside nvim, ignore all but include some_important_file
+!nvim/**
+
+# Inside coc, ignore all but include another_important_file
+!coc/**
+
+coc/extensions/node_modules
+
