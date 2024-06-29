@@ -2,6 +2,7 @@
 vim.opt.clipboard = 'unnamedplus'
 
 
+
 -- IMEをONOFFする。
 -- ZENHANのパスが通っていることが前提
 vim.cmd [[

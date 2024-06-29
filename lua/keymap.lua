@@ -15,8 +15,8 @@ vim.api.nvim_set_keymap('i', 'っｊ', '<ESC>', { noremap = true, silent = true 
 vim.api.nvim_set_keymap('i', 'ｊｊ', '<ESC>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', 'jk', '<ESC>:w<CR>', { noremap = true, silent = true })
 
--- 保存はctrl + s
-vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
+-- 保存はctrl + t
+vim.api.nvim_set_keymap('n', '<C-t>', ':w<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'sw', ':w<CR>', { noremap = true, silent = true })
 
 -- ウィンドウ分割
@@ -36,13 +36,18 @@ vim.api.nvim_set_keymap('v', 'x', '"_x', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'X', '"_X', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', 'X', '"_X', { noremap = true, silent = true })
 
--- Emacs風のカーソル移動
+-- 切り取り時は0レジスタにいれる
+vim.api.nvim_set_keymap('n', 'd', '"0d', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', 'd', '"0d', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'D', '"0D', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', 'D', '"0D', { noremap = true, silent = true })
+
+--  emacs風 
 vim.api.nvim_set_keymap('i', '<C-f>', '<Right>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<C-b>', '<Left>', { noremap = true, silent = true })
 
 -- leader+rで:%s///g
 vim.api.nvim_set_keymap('n', '<leader>r', ':%s///g<Left><Left><Left>', { noremap = true, silent = true })
-
 
 -- leader+cでカレントフォルダを現在のフォルダに変更する
 vim.api.nvim_set_keymap('n', '<leader>c', ':lcd %:p:h<CR>', { noremap = true, silent = true })
