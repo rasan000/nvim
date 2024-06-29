@@ -12,6 +12,7 @@
 !coc/**
 !coc/extensions/package.json
 !coc/extensions/package-lock.json
+coc/extensions/
 
 coc/extensions/node_modules
 
