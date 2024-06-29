@@ -1,12 +1,4 @@
 return {
-    -- auto session
-    {
-        'rmagatti/auto-session',
-        config = function()
-            require('auto-session').setup()
-        end
-    },
-
     -- surround
     {
         'kylechui/nvim-surround',
@@ -37,14 +29,6 @@ return {
                 border = 'double', -- または 'single', 'shadow', 'curved'
             })
             vim.api.nvim_create_user_command('Term', function() require('toggleterm').toggle() end, {})
-        end
-    },
-
-    -- cursorlline
-    {
-        'yamatsum/nvim-cursorline',
-        config = function()
-            require('nvim-cursorline').setup()
         end
     },
 

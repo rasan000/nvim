@@ -10,6 +10,8 @@
 
 # Inside coc, ignore all but include another_important_file
 !coc/**
+!coc/extensions/package.json
+!coc/extensions/package-lock.json
 
 coc/extensions/node_modules
 

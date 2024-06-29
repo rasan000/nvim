@@ -15,7 +15,6 @@ return {
         end
     },
 
-
     --chat
     {
         "CopilotC-Nvim/CopilotChat.nvim",
