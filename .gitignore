@@ -16,6 +16,3 @@ coc/extensions/node_modules
 !coc/extensions/package.json
 !coc/extensions/package-lock.json
 !coc/extensions/ultisnips/** 
-coc/list_history.dat
-coc/memos.json
-coc/mru
