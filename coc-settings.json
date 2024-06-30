@@ -35,11 +35,5 @@
             "initializationOptions": {},
             "settings": {}
         },
-        "kotlin": {
-            "command": "coc/extensions/coc-kotlin-data/langServerInstall/server/bin/kotlin-language-server",
-            "filetypes": [
-                "kotlin"
-            ]
-        }
     }
 }

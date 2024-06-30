@@ -26,7 +26,7 @@ return {
             vim.g.coc_global_extensions = { 'coc-html', 'coc-emmet', 'coc-json', 'coc-css', 'coc-yaml', 
                 'coc-vimlsp', 'coc-tsserver', 'coc-eslint', 'coc-sumneko-lua', 'coc-docker', 'coc-snippets', 'coc-python',
                 'coc-pairs', 'coc-webview', 'coc-markdown-preview-enhanced', 'coc-xml',
-                'coc-tsserver','coc-java' 
+                'coc-tsserver','coc-java','coc-kotlin' 
             }
         end
     }
