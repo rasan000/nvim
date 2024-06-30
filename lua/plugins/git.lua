@@ -1,12 +1,4 @@
 return {
-    -- neogit
-    {
-        'TimUntersberger/neogit',
-        config = function()
-            require('neogit').setup()
-            vim.api.nvim_set_keymap('n', '<C-g>', '<cmd>Neogit<CR>', { noremap = true, silent = true })
-        end
-    },
     -- git signs
     {
         'lewis6991/gitsigns.nvim',
@@ -14,7 +6,15 @@ return {
             require('gitsigns').setup()
         end
     },
-
+    -- git nvim
+    {
+        "dinhhuy258/git.nvim",
+        congit = function()
+            require("git").setup({
+                default_mappings = true,
+            })
+        end
+    },
     --chat
     {
         "CopilotC-Nvim/CopilotChat.nvim",
@@ -33,16 +33,17 @@ return {
     {
         'github/copilot.vim',
         config = function()
+            require('copilot').setup({})
             vim.g.copilot_no_tab_map = true
-            vim.keymap.set('i', '<C-g>', 'copilot#Accept("\\<CR>")', {
+            vim.keymap.set('i', '<C-y>', 'copilot#Accept("\\<CR>")', {
                 expr = true,
                 replace_keycodes = false
             })
-            vim.keymap.set('i', '<C-l>', '<Plug>(copilot-accept-word)')
-            vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Next()', { silent = true, expr = true })
-            vim.api.nvim_set_keymap("i", "<C-k>", 'copilot#Previous()', { silent = true, expr = true })
+            vim.keymap.set('i', '<C-u>', '<Plug>(copilot-accept-word)')
+            -- vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Next()', { silent = true, expr = true })
+            -- vim.api.nvim_set_keymap("i", "<C-k>", 'copilot#Previous()', { silent = true, expr = true })
             vim.api.nvim_set_keymap("i", "<C-d>", 'copilot#Dismiss()', { silent = true, expr = true })
-            vim.api.nvim_set_keymap("i", "<C-s>", 'copilot#Suggest()', { silent = true, expr = true })
+            -- vim.api.nvim_set_keymap("i", "<C-s>", 'copilot#Suggest()', { silent = true, expr = true })
         end
     },
 }

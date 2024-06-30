@@ -25,7 +25,7 @@ return {
                 size = 20,
                 winblend = 15,
                 open_mapping = [[<c-\>]],
-                direction = 'horizontal',
+                direction = 'float',
                 border = 'double', -- または 'single', 'shadow', 'curved'
             })
             vim.api.nvim_create_user_command('Term', function() require('toggleterm').toggle() end, {})

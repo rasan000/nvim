@@ -75,10 +75,10 @@ vim.cmd [[
     let &shell='/usr/bin/bash --login'
     inoremap <ESC> <ESC>:call system('${zenhan} 0')<CR><ESC>
     inoremap jj <ESC>:call system('${zenhan} 0')<CR>
+    inoremap ｊｊ <ESC>:call system('${zenhan} 0')<CR>
     inoremap っｊ <ESC>:call system('${zenhan} 0')<CR>
     nnoremap <ESC> <ESC>:call system('${zenhan} 0')<CR><ESC>
-    nnoremap jj <ESC>:call system('${zenhan} 0')<CR>
-    nnoremap っｊ <ESC>:call system('${zenhan} 0')<CR>
+    vnoremap <ESC> <ESC>:call system('${zenhan} 0')<CR><ESC>
 ]]
 
 -- 開いた時にカレントディレクトリを変更する
@@ -99,4 +99,4 @@ vim.api.nvim_create_autocmd("VimEnter", {
 -- })
 
 -- 少し透明にする
-vim.opt.winblend = 5
+vim.opt.winblend = 10
