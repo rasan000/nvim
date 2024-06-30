@@ -1,7 +1,1 @@
-# Ignore everything
-/*
-
-# Inside nvim, ignore all but include some_important_file
-!/nvim
-!/coc
-!/.gitignore
+test*

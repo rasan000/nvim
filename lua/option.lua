@@ -12,6 +12,7 @@ vim.opt.clipboard = 'unnamedplus'
 
 -- ちらつきぼうし
 vim.opt.showtabline = 1
+
 -- 文字コード
 vim.opt.fileencoding = "utf-8"
 vim.scriptencoding = "utf-8"
@@ -62,12 +63,22 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+-- こちらはcocの補完選択と干渉するから非推奨
 -- IMEをONOFFする。
 -- ZENHANのパスが通っていることが前提
+-- vim.cmd [[
+--     let &shell='/usr/bin/bash --login'
+--     autocmd InsertLeave * :call system('${zenhan} 0')
+--     autocmd CmdlineLeave * :call system('${zenhan} 0')
+-- ]]
 vim.cmd [[
     let &shell='/usr/bin/bash --login'
-    autocmd InsertLeave * :call system('${zenhan} 0')
-    autocmd CmdlineLeave * :call system('${zenhan} 0')
+    inoremap <ESC> <ESC>:call system('${zenhan} 0')<CR><ESC>
+    inoremap jj <ESC>:call system('${zenhan} 0')<CR>
+    inoremap っｊ <ESC>:call system('${zenhan} 0')<CR>
+    nnoremap <ESC> <ESC>:call system('${zenhan} 0')<CR><ESC>
+    nnoremap jj <ESC>:call system('${zenhan} 0')<CR>
+    nnoremap っｊ <ESC>:call system('${zenhan} 0')<CR>
 ]]
 
 -- 開いた時にカレントディレクトリを変更する
