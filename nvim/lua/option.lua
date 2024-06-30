@@ -78,13 +78,14 @@ vim.api.nvim_create_autocmd("VimEnter", {
   end,
 })
 
--- 開いたときにnvim-treeを開く  
-vim.api.nvim_create_autocmd("VimEnter", {
- pattern = "*",
- callback = function()
-   vim.cmd("NvimTreeOpen")
- end,
-})
+-- -- 開いたときにnvim-treeを開く  
+-- -- ちょっと邪魔な時があるので気が向くまでOFF
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--  pattern = "*",
+--  callback = function()
+--    vim.cmd("NvimTreeOpen")
+--  end,
+-- })
 
 -- 少し透明にする
 vim.opt.winblend = 5
