@@ -24,16 +24,11 @@ vim.api.nvim_set_keymap('i', 'ｊｊ', '<ESC>', { noremap = true, silent = true 
 vim.api.nvim_set_keymap('n', 'ss', ':split<Return><C-w>w', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'sv', ':vsplit<Return><C-w>w', { noremap = true, silent = true })
 
--- ウィンドウを閉じる
-vim.api.nvim_set_keymap('n', 'sc', ':q<Return>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'sw', ':wq<Return>', { noremap = true, silent = true })
-
 -- ウィンドウ間の移動
 vim.api.nvim_set_keymap('n', 'sh', '<C-w>h', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'sk', '<C-w>k', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'sj', '<C-w>j', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'sl', '<C-w>l', { noremap = true, silent = true })
-
 
 -- 強制終了
 vim.api.nvim_set_keymap('n', '<leader>q', ':q!<CR>', { noremap = true, silent = true })
