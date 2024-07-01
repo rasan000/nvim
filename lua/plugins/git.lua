@@ -37,9 +37,10 @@ return {
     --copilot
     {
         'github/copilot.vim',
-        lazy = false ,
+        lazy = false,
         config = function()
-            vim.g.copilot_no_tab_map =false 
+            vim.g.copilot_no_tab_map = false
+            vim.api.nvim_set_keymap('i', '<C-y>', '<Cmd>CopilotAccept()<CR>', {})
         end
     },
 }
