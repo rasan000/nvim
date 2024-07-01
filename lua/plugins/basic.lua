@@ -24,7 +24,7 @@ return {
             require('toggleterm').setup({
                 size = 20,
                 winblend = 15,
-                open_mapping = [[<c-\>]],
+                open_mapping = [[<c-j>]],
                 direction = 'float',
                 border = 'double', -- または 'single', 'shadow', 'curved'
             })
