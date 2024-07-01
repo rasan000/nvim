@@ -66,7 +66,7 @@ vim.api.nvim_set_keymap('i', '<C-b>', '<Left>', { noremap = true, silent = true 
 vim.api.nvim_set_keymap('n', '<leader>r', ':%s///g<Left><Left><Left>', { noremap = true, silent = true })
 
 -- leader+cでカレントフォルダを現在のフォルダに変更する
-vim.api.nvim_set_keymap('n', '<leader>c', ':lcd %:p:h<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>cd', ':lcd %:p:h<CR>', { noremap = true, silent = true })
 
 --設定ファイルを開く
 vim.api.nvim_set_keymap('n', '<leader><F1>', ':edit $MYVIMRC<CR>', { noremap = true, silent = true })

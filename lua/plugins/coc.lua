@@ -5,7 +5,10 @@ return {
         config = function()
             -- フォーマットに関するコマンド
             vim.api.nvim_create_user_command('Format', 'call CocAction("format")', {})
-            vim.api.nvim_set_keymap('n', '<leader>f', ':Format<cr>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>cf', ':Format<cr>', { noremap = true, silent = true })
+            
+            -- インストール
+            vim.api.nvim_set_keymap('n', '<leader>cl', '<Cmd>CocList<cr>', { noremap = true, silent = true })
 
             -- 何故かcopilotのtabが効いてしまうときがあるので防ぐ
             vim.g.copilot_no_tab_map = true
