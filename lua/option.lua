@@ -73,12 +73,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- ]]
 vim.cmd [[
     let &shell='/usr/bin/bash --login'
-    inoremap <ESC> <ESC>:call system('${zenhan} 0')<CR><ESC>
+    inoremap <ESC> <ESC>:call system('${zenhan} 0')<CR>
+    nnoremap <ESC> <ESC>:call system('${zenhan} 0')<CR>
+    vnoremap <ESC> <ESC>:call system('${zenhan} 0')<CR>
     inoremap jj <ESC>:call system('${zenhan} 0')<CR>
     inoremap ｊｊ <ESC>:call system('${zenhan} 0')<CR>
     inoremap っｊ <ESC>:call system('${zenhan} 0')<CR>
-    nnoremap <ESC> <ESC>:call system('${zenhan} 0')<CR><ESC>
-    vnoremap <ESC> <ESC>:call system('${zenhan} 0')<CR><ESC>
 ]]
 
 -- 開いた時にカレントディレクトリを変更する

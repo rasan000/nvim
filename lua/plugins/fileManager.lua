@@ -4,16 +4,16 @@ return {
         'kyazdani42/nvim-tree.lua',
         config = function()
             require('nvim-tree').setup({
-                view = { width = 30, side = 'left' },
+                view = { width = 40, side = 'left' },
 
-                filters = { custom = { 'node_modules/', '.git/' } },
+                filters = { custom = { 'node_modules', '.git' } },
                 --デフォルト設定-- ここでデフォルトmapping込みの設定にすり替え
                 on_attach = function(bufnr)
                     local api = require "nvim-tree.api"
                     local function opts(desc)
                         return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
                     end
-                    vim.keymap.set('n', '<C-]>', api.tree.change_root_to_node, opts('CD'))
+                    vim.keymap.set('n', '<C-p>', api.tree.change_root_to_node, opts('CD'))
                     -- vim.keymap.set('n', '<C-e>', api.node.open.replace_tree_buffer, opts('Open: In Place'))
                     vim.keymap.set('n', '<C-k>', api.node.show_info_popup, opts('Info'))
                     vim.keymap.set('n', '<C-r>', api.fs.rename_sub, opts('Rename: Omit Filename'))
@@ -73,7 +73,7 @@ return {
                 end
             })
             vim.api.nvim_set_keymap('n', '<C-e>', '<cmd>NvimTreeToggle<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<leader>fp', '<cmd>NvimTreeFindFileToggle<CR>',
+            vim.api.nvim_set_keymap('n', '<leader>p', '<cmd>NvimTreeFindFileToggle<CR>',
                 { noremap = true, silent = true })
         end
     },

@@ -22,10 +22,10 @@ return {
                     }
                 }
             })
-            vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep <CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<leader>fn', '<cmd>Telescope help_tags<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>tf', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>tg', '<cmd>Telescope live_grep <CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>tb', '<cmd>Telescope buffers<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>th', '<cmd>Telescope help_tags<CR>', { noremap = true, silent = true })
         end
     },
     {
@@ -38,10 +38,9 @@ return {
         'fannheyward/telescope-coc.nvim',
         config = function()
             require('telescope').load_extension 'coc'
-            vim.api.nvim_set_keymap('n', 'gd', '<cmd>Telescope coc definitions<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', 'gy', '<cmd>Telescope coc type_definitions<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>Telescope coc diagnostics<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<leader>fl', '<cmd>Telescope.frecency<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>tt', '<cmd>Telescope coc type_definitions<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>td', '<cmd>Telescope coc diagnostics<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>tr', '<cmd>Telescope.frecency<CR>', { noremap = true, silent = true })
         end,
     },
     {

@@ -26,7 +26,7 @@ return {
             "nvim-telescope/telescope.nvim", -- optional
             "ibhagwan/fzf-lua",              -- optional
         },
-        config = true
+        config = true,
         vim.api.nvim_set_keymap('n', '<leader>g', '<Cmd>Neogit<CR>', {})
     },
     --chat
@@ -41,19 +41,15 @@ return {
             debug = true, -- Enable debugging
             -- See Configuration section for rest
         },
-        vim.api.nvim_set_keymap('n', '<leader>p', '<Cmd>CopilotChatToggle<CR>', {})
+        vim.api.nvim_set_keymap('n', '<leader>cc', '<Cmd>CopilotChatToggle<CR>', {})
     },
     --copilot
     {
         'github/copilot.vim',
         config = function()
             require('copilot').setup({})
-            vim.g.copilot_no_tab_map = true
-            vim.keymap.set('i', '<C-y>', 'copilot#Accept("\\<CR>")', {
-                expr = true,
-                replace_keycodes = false
-            })
-            vim.keymap.set('i', '<C-u>', '<Plug>(copilot-accept-word)')
+            vim.g.copilot_no_tab_map = false
+            vim.keymap.set('i', '<C-y>', '<Plug>(copilot-accept-word)')
             -- vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Next()', { silent = true, expr = true })
             -- vim.api.nvim_set_keymap("i", "<C-k>", 'copilot#Previous()', { silent = true, expr = true })
             vim.api.nvim_set_keymap("i", "<C-d>", 'copilot#Dismiss()', { silent = true, expr = true })
