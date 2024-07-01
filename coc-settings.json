@@ -1,5 +1,5 @@
 {
-    "coc.preferences.extensionUpdateCheck": "daily",
+    "coc.preferences.extensionUpdateCheck": "never",
     "suggest.triggerAfterInsertEnter": true,
     "suggest.noselect": false,
     "suggest.minTriggerInputLength": 2,

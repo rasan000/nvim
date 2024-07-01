@@ -9,8 +9,12 @@ vim.api.nvim_set_keymap('v', 'k', 'gk', { noremap = true, silent = true })
 -- ハイライトを消す
 vim.api.nvim_set_keymap('n', '<ESC><ESC>', ':noh<Return>', { noremap = true, silent = true })
 
+-- sキーを無効化
+vim.api.nvim_set_keymap('n', 's', '<NOP>', { noremap = true, silent = true })
+
 -- ノーマルモードのみコロンをセミコロン
 vim.api.nvim_set_keymap('n', ';', ':', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', "'", '"', { noremap = true, silent = true })
 
 -- 全て選択 
 vim.api.nvim_set_keymap('n', '<C-a>', 'ggVG', { noremap = true, silent = true })

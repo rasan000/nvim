@@ -14,6 +14,8 @@ return {
         'echasnovski/mini.comment',
         config = function()
             require('mini.comment').setup()
+            vim.api.nvim_set_keymap('n', '<leader>/', 'gcc', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('v', '<leader>/', 'gc', { noremap = true, silent = true })
         end
     },
 
