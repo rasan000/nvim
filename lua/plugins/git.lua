@@ -37,10 +37,13 @@ return {
     --copilot
     {
         'github/copilot.vim',
-        lazy = false,
         config = function()
             vim.g.copilot_no_tab_map = false
-            vim.api.nvim_set_keymap('i', '<C-y>', '<Cmd>CopilotAccept()<CR>', {})
+            vim.api.nvim_set_keymap("i","<C-k>",'copilot#Accept("<CR>")',{ silent = true, expr = true, script = true, replace_keycodes = false })
+            vim.api.nvim_set_keymap("i", "<C-y>", "<Plug>(copilot-accept-word)", { silent = true })
+            vim.api.nvim_set_keymap("i", "<C-d>", "<Plug>(copilot-dismiss)",{ silent = true })
+            vim.api.nvim_set_keymap("i", "<C-]>", "<Plug>(copilot-next)",{ silent = true })
+            vim.api.nvim_set_keymap("i", "<C-[>", "<Plug>(copilot-previous)",{ silent = true })
         end
     },
 }

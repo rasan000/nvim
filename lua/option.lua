@@ -71,16 +71,16 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 --     autocmd InsertLeave * :call system('${zenhan} 0')
 --     autocmd CmdlineLeave * :call system('${zenhan} 0')
 -- ]]
+
 vim.cmd [[
     let &shell='/usr/bin/bash --login'
-    " inoremap <ESC> <ESC>:call system('${zenhan} 0')<CR>
-    nnoremap <ESC> <ESC>:call system('${zenhan} 0')<CR>
-    vnoremap <ESC> <ESC>:call system('${zenhan} 0')<CR>
-    inoremap jj <ESC>:call system('${zenhan} 0')<CR>
-    inoremap ｊｊ <ESC>:call system('${zenhan} 0')<CR>
-    inoremap っｊ <ESC>:call system('${zenhan} 0')<CR>
 ]]
-vim.api.nvim_set_keymap('i','<ESC>','<Cmd>:call system("${zenhan} 0")<CR>',{noremap = true})
+vim.api.nvim_set_keymap('i','<ESC>','<ESC><Cmd>:call system("${zenhan} 0")<CR>',{noremap = true})
+vim.api.nvim_set_keymap('n','<ESC>','<ESC><Cmd>:call system("${zenhan} 0")<CR>',{noremap = true})
+vim.api.nvim_set_keymap('v','<ESC>','<ESC><Cmd>:call system("${zenhan} 0")<CR>',{noremap = true})
+vim.api.nvim_set_keymap('i','ｊｊ','<ESC><Cmd>:call system("${zenhan} 0")<CR>',{noremap = true})
+vim.api.nvim_set_keymap('i','jj','<ESC><Cmd>:call system("${zenhan} 0")<CR>',{noremap = true})
+vim.api.nvim_set_keymap('i','っ','<ESC><Cmd>:call system("${zenhan} 0")<CR>',{noremap = true})
 
 -- 開いた時にカレントディレクトリを変更する
 vim.api.nvim_create_autocmd("VimEnter", {

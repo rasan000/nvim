@@ -9,20 +9,11 @@ vim.api.nvim_set_keymap('v', 'k', 'gk', { noremap = true, silent = true })
 -- ハイライトを消す
 vim.api.nvim_set_keymap('n', '<leader>h', '<Cmd>noh<CR>', { noremap = true, silent = true })
 
--- sキーを無効化
-vim.api.nvim_set_keymap('n', 's', '<NOP>', { noremap = true, silent = true })
-
 -- ノーマルモードのみコロンをセミコロン
 vim.api.nvim_set_keymap('n', ';', ':', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', "'", '"', { noremap = true, silent = true })
 
 -- 全て選択 
 vim.api.nvim_set_keymap('n', '<C-a>', 'ggVG', { noremap = true, silent = true })
-
--- jj jk でノーマルモードに戻る、jkは保存しながら
-vim.api.nvim_set_keymap('i', 'jj', '<ESC>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', 'っｊ', '<ESC>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', 'ｊｊ', '<ESC>', { noremap = true, silent = true })
 
 -- ウィンドウ分割
 vim.api.nvim_set_keymap('n', 'ss', ':split<Return><C-w>w', { noremap = true, silent = true })
@@ -33,9 +24,6 @@ vim.api.nvim_set_keymap('n', 'sh', '<C-w>h', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'sk', '<C-w>k', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'sj', '<C-w>j', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'sl', '<C-w>l', { noremap = true, silent = true })
-
--- 強制終了
-vim.api.nvim_set_keymap('n', '<leader>q', ':q!<CR>', { noremap = true, silent = true })
 
 -- 削除時はヤンクしない
 vim.api.nvim_set_keymap('n', 'x', '"_x', { noremap = true, silent = true })

@@ -9,13 +9,16 @@ return {
         end
     },
 
-    -- comment
+    --comment
     {
         'echasnovski/mini.comment',
         config = function()
-            require('mini.comment').setup()
-            vim.api.nvim_set_keymap('n', '<leader>/', 'gcc', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('v', '<leader>/', 'gc', { noremap = true, silent = true })
+            require('mini.comment').setup({
+                mappings = {
+                    comment_visual = '<Leader>/',
+                    comment_line = '<Leader>/',
+                }
+            })
         end
     },
 
@@ -26,7 +29,7 @@ return {
             require('toggleterm').setup({
                 size = 20,
                 winblend = 15,
-                open_mapping = [[<c-j>]],
+                open_mapping = [[<c-`>]],
                 direction = 'float',
                 border = 'double', -- または 'single', 'shadow', 'curved'
             })
