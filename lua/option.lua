@@ -63,15 +63,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
--- こちらはcocの補完選択と干渉するから非推奨
--- IMEをONOFFする。
--- ZENHANのパスが通っていることが前提
--- vim.cmd [[
---     let &shell='/usr/bin/bash --login'
---     autocmd InsertLeave * :call system('${zenhan} 0')
---     autocmd CmdlineLeave * :call system('${zenhan} 0')
--- ]]
-
 vim.cmd [[
     let &shell='/usr/bin/bash --login'
 ]]
@@ -83,13 +74,13 @@ vim.api.nvim_set_keymap('i','jj','<ESC><Cmd>:call system("${zenhan} 0")<CR>',{no
 vim.api.nvim_set_keymap('i','っ','<ESC><Cmd>:call system("${zenhan} 0")<CR>',{noremap = true})
 
 -- 開いた時にカレントディレクトリを変更する
-vim.api.nvim_create_autocmd("VimEnter", {
-  pattern = "*",
-  callback = function()
-    vim.cmd("lcd " .. vim.fn.expand("%:p:h"))
-  end,
-})
-
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--   pattern = "*",
+--   callback = function()
+--     vim.cmd("lcd " .. vim.fn.expand("%:p:h"))
+--   end,
+-- })
+--
 -- -- 開いたときにnvim-treeを開く  
 -- -- ちょっと邪魔な時があるので気が向くまでOFF
 -- vim.api.nvim_create_autocmd("VimEnter", {

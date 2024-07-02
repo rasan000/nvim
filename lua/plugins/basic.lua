@@ -29,9 +29,9 @@ return {
             require('toggleterm').setup({
                 size = 20,
                 winblend = 15,
-                open_mapping = [[<leader>`]],
+                open_mapping = [[<c-t>]],
                 direction = 'float',
-                border = 'shadow', -- または 'single', 'shadow', 'curved'
+                border = 'double', -- または 'single', 'shadow', 'curved'
             })
             vim.api.nvim_create_user_command('Term', function() require('toggleterm').toggle() end, {})
         end
@@ -91,10 +91,6 @@ return {
             vim.o.timeout = true
             vim.o.timeoutlen = 300
         end,
-        opts = {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
-        }
+        opts = { }
     }
 }
