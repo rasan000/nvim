@@ -29,9 +29,9 @@ return {
             require('toggleterm').setup({
                 size = 20,
                 winblend = 15,
-                open_mapping = [[<c-`>]],
+                open_mapping = [[<leader>`]],
                 direction = 'float',
-                border = 'double', -- または 'single', 'shadow', 'curved'
+                border = 'shadow', -- または 'single', 'shadow', 'curved'
             })
             vim.api.nvim_create_user_command('Term', function() require('toggleterm').toggle() end, {})
         end
