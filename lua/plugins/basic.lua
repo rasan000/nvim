@@ -101,5 +101,30 @@ return {
             vim.o.timeoutlen = 300
         end,
         opts = {}
+<<<<<<< HEAD
     }
+=======
+    },
+
+    -- csv
+    {
+        'cameron-wags/rainbow_csv.nvim',
+        config = true,
+        ft = {
+            'csv',
+            'tsv',
+            'csv_semicolon',
+            'csv_whitespace',
+            'csv_pipe',
+            'rfc_csv',
+            'rfc_semicolon'
+        },
+        cmd = {
+            'RainbowDelim',
+            'RainbowDelimSimple',
+            'RainbowDelimQuoted',
+            'RainbowMultiDelim'
+        }
+    },
+>>>>>>> 1751c164df53da5efb7c016e5254082225ef684a
 }
