@@ -27,7 +27,7 @@ return {
         'akinsho/toggleterm.nvim',
         config = function()
             require('toggleterm').setup({
-                size = 25,
+                size = 20,
                 winblend = 15,
                 open_mapping = [[<c-\>]],
                 direction = 'horizontal',
@@ -37,12 +37,6 @@ return {
             local opts = { noremap = true, silent = true }
 
             vim.api.nvim_set_keymap('t', '<esc>', [[<C-\><C-n>]], opts)
-            vim.api.nvim_set_keymap('t', 'jk', [[<C-\><C-n>]], opts)
-            vim.api.nvim_set_keymap('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
-            vim.api.nvim_set_keymap('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
-            vim.api.nvim_set_keymap('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
-            vim.api.nvim_set_keymap('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
-            vim.api.nvim_set_keymap('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
         end
     },
 
