@@ -20,6 +20,13 @@ return {
         config = true,
         vim.api.nvim_set_keymap('n', '<leader>g', '<Cmd>Neogit<CR>', {})
     },
+    --message
+    {
+        "rhysd/git-messenger.vim",
+        config = function()
+            vim.api.nvim_set_keymap('n', '<leader>gm', '<Cmd>GitMessenger<CR>', {})
+        end
+    },
     --chat
     {
         "CopilotC-Nvim/CopilotChat.nvim",

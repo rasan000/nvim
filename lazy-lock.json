@@ -6,6 +6,7 @@
   "copilot.vim": { "branch": "release", "commit": "0668308e68b0ac28b332b204b469fbe04601536a" },
   "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
   "fzf-lua": { "branch": "main", "commit": "0cdc3dfcd50402fce87b8bb947504e8dd25fbd7e" },
+  "git-messenger.vim": { "branch": "master", "commit": "8a61bdfa351d4df9a9118ee1d3f45edbed617072" },
   "gitsigns.nvim": { "branch": "main", "commit": "6b1a14eabcebbcca1b9e9163a26b2f8371364cb7" },
   "indent-blankline.nvim": { "branch": "master", "commit": "65e20ab94a26d0e14acac5049b8641336819dfc7" },
   "lazy.nvim": { "branch": "main", "commit": "a9d7ade203b3f3ee3058c082c62afdf8e4bcb416" },
@@ -25,6 +26,5 @@
   "telescope.nvim": { "branch": "master", "commit": "6312868392331c9c0f22725041f1ec2bef57c751" },
   "toggleterm.nvim": { "branch": "main", "commit": "cd55bf6aab3f88c259fa29ea86bbdcb1a325687d" },
   "vim-easymotion": { "branch": "master", "commit": "b3cfab2a6302b3b39f53d9fd2cd997e1127d7878" },
-  "vim-react-snippets": { "branch": "main", "commit": "19c86459f4cd545f889624df13b8d5862457c633" },
   "which-key.nvim": { "branch": "main", "commit": "0099511294f16b81c696004fa6a403b0ae61f7a0" }
 }
