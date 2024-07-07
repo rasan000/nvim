@@ -17,6 +17,9 @@ return {
             -- diagnostics appeared/became resolved
             vim.opt.signcolumn = "yes"
 
+            -- copilotの誤動作を防ぐ 
+            vim.g.copilot_no_tab_map = true
+
             local keyset = vim.keymap.set
             -- Autocomplete
             function _G.check_back_space()
