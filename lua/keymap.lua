@@ -13,9 +13,6 @@ vim.api.nvim_set_keymap('n', 'nh', '<Cmd>noh<CR>', { noremap = true, silent = tr
 vim.api.nvim_set_keymap('n', ';', ':', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', ';', ':', { noremap = true, silent = true })
 
--- 全て選択 
-vim.api.nvim_set_keymap('n', '<C-a>', 'ggVG', { noremap = true, silent = true })
-
 -- ウィンドウ分割
 vim.api.nvim_set_keymap('n', 'ss', ':split<Return><C-w>w', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'sv', ':vsplit<Return><C-w>w', { noremap = true, silent = true })
