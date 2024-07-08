@@ -163,7 +163,7 @@ return {
 
             -- Add `:Format` command to format current buffer
             vim.api.nvim_create_user_command("Format", "call CocAction('format')", {})
-            vim.api.nvim_set_keymap('n',"<leader>fo", "call CocAction('format')", {})
+            vim.api.nvim_set_keymap('n',"<leader>fo", "<Cmd>Format<CR>", {})
 
             -- " Add `:Fold` command to fold current buffer
             vim.api.nvim_create_user_command("Fold", "call CocAction('fold', <f-args>)", { nargs = '?' })
