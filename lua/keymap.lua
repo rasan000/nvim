@@ -48,7 +48,7 @@ vim.api.nvim_set_keymap('i', '<C-p>', '<Up>', { noremap = true, silent = true })
 --入力中に貼り付け
 vim.api.nvim_set_keymap('i', '<C-r>', '<C-r>+', { noremap = true, silent = true })
 -- ctrl+rで:%s///g
-vim.api.nvim_set_keymap('n', '<C-r>', ':%s/\\<<C-r><C-w>\\>//g<Left><Left>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-r>', ':%s///<left><Left>', { noremap = true, silent = true })
 
 -- leader+cでカレントフォルダを現在のフォルダに変更する
 vim.api.nvim_set_keymap('n', '<leader>cd', ':lcd %:p:h<CR>', { noremap = true, silent = true })
