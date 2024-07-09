@@ -7,7 +7,10 @@ vim.api.nvim_set_keymap('v', 'j', 'gj', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', 'k', 'gk', { noremap = true, silent = true })
 
 -- ハイライトを消す
-vim.api.nvim_set_keymap('n', 'nh', '<Cmd>noh<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>n', '<Cmd>noh<CR>', { noremap = true, silent = true })
+
+--- 全て選択 
+vim.api.nvim_set_keymap('n', '<C-a>', 'ggVG', { noremap = true, silent = true })
 
 -- ノーマルモードのみコロンをセミコロン
 vim.api.nvim_set_keymap('n', ';', ':', { noremap = true, silent = true })
@@ -39,7 +42,7 @@ vim.api.nvim_set_keymap('v', 'd', '"0d', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'D', '"0D', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', 'D', '"0D', { noremap = true, silent = true })
 
--- 入力中に移動したい時 
+-- 入力中に移動したい時
 vim.api.nvim_set_keymap('i', '<C-f>', '<Right>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<C-b>', '<Left>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<C-n>', '<Down>', { noremap = true, silent = true })
@@ -47,8 +50,8 @@ vim.api.nvim_set_keymap('i', '<C-p>', '<Up>', { noremap = true, silent = true })
 
 --入力中に貼り付け
 vim.api.nvim_set_keymap('i', '<C-r>', '<C-r>+', { noremap = true, silent = true })
--- ctrl+rで:%s///g
-vim.api.nvim_set_keymap('n', '<C-r>', ':%s///<left><Left>', { noremap = true, silent = true })
+-- ctrl+gで:%s///g
+vim.api.nvim_set_keymap('n', '<C-g>', ':%s///<left><Left>', { noremap = true, silent = true })
 
 -- leader+cでカレントフォルダを現在のフォルダに変更する
 vim.api.nvim_set_keymap('n', '<leader>cd', ':lcd %:p:h<CR>', { noremap = true, silent = true })

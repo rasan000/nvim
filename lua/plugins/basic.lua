@@ -27,10 +27,10 @@ return {
         'akinsho/toggleterm.nvim',
         config = function()
             require('toggleterm').setup({
-                size = 20,
+                size = 30,
                 winblend = 15,
                 open_mapping = [[<c-\>]],
-                direction = 'horizontal',
+                direction = 'float',
                 border = 'double', -- または 'single', 'shadow', 'curved'
             })
             vim.api.nvim_create_user_command('Term', function() require('toggleterm').toggle() end, {})
