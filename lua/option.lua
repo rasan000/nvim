@@ -1,5 +1,5 @@
 -- ヘルプを日本語表記に
-vim.opt.helplang= 'ja','en'
+vim.opt.helplang = 'ja', 'en'
 --コマンド候補
 vim.opt.wildmenu = true
 
@@ -24,12 +24,12 @@ vim.opt.number = true
 vim.opt.swapfile = false
 vim.opt.relativenumber = true
 
--- タブを4文字に設定する
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true 
-vim.opt.autoindent = true 
-vim.opt.smartindent = true 
+-- タブを2文字に設定する
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.autoindent = true
+vim.opt.smartindent = true
 
 -- 検索
 vim.opt.ignorecase = true
@@ -57,21 +57,21 @@ vim.opt.inccommand = split
 -- ヤンクした内容をハイライトする
 vim.api.nvim_set_hl(0, "YankHighlight", { bg = "#553311" })
 vim.api.nvim_create_autocmd("TextYankPost", {
-  pattern = "*",
-  callback = function()
-    vim.highlight.on_yank({ higroup = 'YankHighlight', timeout = 200 })
-  end,
+    pattern = "*",
+    callback = function()
+        vim.highlight.on_yank({ higroup = 'YankHighlight', timeout = 200 })
+    end,
 })
 
 vim.cmd [[
     let &shell='/usr/bin/bash --login'
 ]]
-vim.api.nvim_set_keymap('i','<ESC>','<ESC><Cmd>:call system("${zenhan} 0")<CR>',{noremap = true})
-vim.api.nvim_set_keymap('n','<ESC>','<ESC><Cmd>:call system("${zenhan} 0")<CR>',{noremap = true})
-vim.api.nvim_set_keymap('v','<ESC>','<ESC><Cmd>:call system("${zenhan} 0")<CR>',{noremap = true})
-vim.api.nvim_set_keymap('i','ｊｊ','<ESC><Cmd>:call system("${zenhan} 0")<CR>',{noremap = true})
-vim.api.nvim_set_keymap('i','jj','<ESC><Cmd>:call system("${zenhan} 0")<CR>',{noremap = true})
-vim.api.nvim_set_keymap('i','っ','<ESC><Cmd>:call system("${zenhan} 0")<CR>',{noremap = true})
+vim.api.nvim_set_keymap('i', '<ESC>', '<ESC><Cmd>:call system("${zenhan} 0")<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<ESC>', '<ESC><Cmd>:call system("${zenhan} 0")<CR>', { noremap = true })
+vim.api.nvim_set_keymap('v', '<ESC>', '<ESC><Cmd>:call system("${zenhan} 0")<CR>', { noremap = true })
+vim.api.nvim_set_keymap('i', 'ｊｊ', '<ESC><Cmd>:call system("${zenhan} 0")<CR>', { noremap = true })
+vim.api.nvim_set_keymap('i', 'jj', '<ESC><Cmd>:call system("${zenhan} 0")<CR>', { noremap = true })
+vim.api.nvim_set_keymap('i', 'っ', '<ESC><Cmd>:call system("${zenhan} 0")<CR>', { noremap = true })
 
 -- 開いた時にカレントディレクトリを変更する
 -- vim.api.nvim_create_autocmd("VimEnter", {
@@ -81,7 +81,7 @@ vim.api.nvim_set_keymap('i','っ','<ESC><Cmd>:call system("${zenhan} 0")<CR>',{n
 --   end,
 -- })
 --
--- -- 開いたときにnvim-treeを開く  
+-- -- 開いたときにnvim-treeを開く
 -- -- ちょっと邪魔な時があるので気が向くまでOFF
 -- vim.api.nvim_create_autocmd("VimEnter", {
 --  pattern = "*",

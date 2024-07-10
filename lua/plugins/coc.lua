@@ -17,7 +17,7 @@ return {
             -- diagnostics appeared/became resolved
             vim.opt.signcolumn = "yes"
 
-            -- copilotの誤動作を防ぐ 
+            -- copilotの誤動作を防ぐ
             vim.g.copilot_no_tab_map = true
 
             local keyset = vim.keymap.set
@@ -148,9 +148,9 @@ return {
             keyset("n", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opts)
             keyset("n", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
             -- keyset("i", "<C-f>",
-                -- 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(1)<cr>" : "<Right>"', opts)
+            -- 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(1)<cr>" : "<Right>"', opts)
             -- keyset("i", "<C-b>",
-                -- 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(0)<cr>" : "<Left>"', opts)
+            -- 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(0)<cr>" : "<Left>"', opts)
             keyset("v", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opts)
             keyset("v", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
 
@@ -163,7 +163,7 @@ return {
 
             -- Add `:Format` command to format current buffer
             vim.api.nvim_create_user_command("Format", "call CocAction('format')", {})
-            vim.api.nvim_set_keymap('n',"<leader>fo", "<Cmd>Format<CR>", {})
+            vim.api.nvim_set_keymap('n', "<leader>fo", "<Cmd>Format<CR>", {})
 
             -- " Add `:Fold` command to fold current buffer
             vim.api.nvim_create_user_command("Fold", "call CocAction('fold', <f-args>)", { nargs = '?' })
@@ -197,6 +197,16 @@ return {
             -- keyset("n", "<space>k", ":<C-u>CocPrev<cr>", opts)
             -- -- Resume latest coc list
             -- keyset("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
+            vim.g.coc_global_extensions = { 'coc-html', 'coc-emmet', 'coc-json', 'coc-css', 'coc-yaml', 'coc-vimlsp',
+                'coc-tsserver', 'coc-eslint', 'coc-sumneko-lua', 'coc-docker', 'coc-snippets', 'coc-python', 'coc-pairs',
+                'coc-webview', 'coc-markdown-preview-enhanced', 'coc-xml', 'coc-tsserver', 'coc-java', 'coc-kotlin',
+                'coc-prettier' }
+
+
+            -- command
+            vim.api.nvim_create_user_command("Prettier", function()
+                vim.cmd("CocCommand prettier.forceFormatDocument")
+            end, { nargs = 0 })
         end
     }
 }
