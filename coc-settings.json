@@ -1,6 +1,9 @@
 {
   "coc.preferences.extensionUpdateCheck": "weekly",
   "eslint.enable": true,
+  "eslint.packageManager": "npm",
+  "eslint.experimental.useFlatConfig": true,
+  "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "suggest.autoTrigger": "always",
   "suggest.noselect": false,
   "suggest.floatConfig": {
@@ -43,7 +46,6 @@
   "typescript.suggest.autoImports": true,
   "html.autoClosingTags": false,
   "css.completion.completePropertyWithSemicolon": false,
-  "yank.enableCompletion": false,
   "languageserver": {
     "terraform": {
       "command": "terraform-ls",

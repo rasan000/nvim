@@ -1,7 +1,7 @@
 if not vim.g.vscode then
-    require("keymap")
-    require("option")
-    require("plugin")
+  require("keymap")
+  require("option")
+  require("plugin")
 else
-    require("code")
+  require("code")
 end
