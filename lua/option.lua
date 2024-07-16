@@ -19,10 +19,10 @@ vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
 
 
--- 行番号と相対行番号を表示する
+-- 行番号
 vim.opt.number = true
 vim.opt.swapfile = false
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
 -- タブを2文字に設定する
 vim.opt.tabstop = 2
@@ -43,6 +43,7 @@ vim.opt.mouse = "a"
 
 -- バッファ削除時に保存されていないバッファを閉じる
 vim.opt.hidden = true
+vim.opt.backup = false
 vim.opt.swapfile = false
 
 -- fishだとzenhanの切り替えがうまく動かなかったのでなし
@@ -55,7 +56,7 @@ vim.opt.title = true
 vim.opt.inccommand = split
 
 -- ヤンクした内容をハイライトする
-vim.api.nvim_set_hl(0, "YankHighlight", { bg = "#553311" })
+vim.api.nvim_set_hl(0, "YankHighlight", { bg = "#FFFFFF" })
 vim.api.nvim_create_autocmd("TextYankPost", {
     pattern = "*",
     callback = function()
