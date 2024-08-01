@@ -3,7 +3,7 @@ vim.opt.helplang = 'ja', 'en'
 --コマンド候補
 vim.opt.wildmenu = true
 -- 折り返し無し
-vim.opt.wrap = false
+-- vim.opt.wrap = false
 
 -- netrwを無効化
 vim.g.loaded_netrw = 1
