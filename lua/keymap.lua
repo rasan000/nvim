@@ -9,8 +9,12 @@ vim.api.nvim_set_keymap('v', 'k', 'gk', { noremap = true, silent = true })
 -- ハイライトを消す
 vim.api.nvim_set_keymap('n', '<leader>n', '<Cmd>noh<CR>', { noremap = true, silent = true })
 
---- 全て選択 
+--- 全て選択
 vim.api.nvim_set_keymap('n', '<C-a>', 'ggVG', { noremap = true, silent = true })
+
+--インクリメント デクリメント
+vim.api.nvim_set_keymap('n', '<a-a>', '<C-a>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<a-x>', '<C-x>', { noremap = true, silent = true })
 
 -- ノーマルモードのみコロンをセミコロン
 vim.api.nvim_set_keymap('n', ';', ':', { noremap = true, silent = true })

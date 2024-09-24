@@ -3,12 +3,6 @@
   "eslint.enable": true,
   "eslint.packageManager": "npm",
   "eslint.experimental.useFlatConfig": true,
-  "eslint.filetypes": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
   "suggest.autoTrigger": "always",
   "suggest.noselect": false,
   "suggest.floatConfig": {

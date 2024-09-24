@@ -5,13 +5,13 @@ return {
     config = function()
       -- https://raw.githubusercontent.com/neoclide/coc.nvim/master/doc/coc-example-config.lua
 
-      -- Some servers have issues with backup files, see #649
+      -- Some servers have issues with backup files, see #650
       vim.opt.backup = false
       vim.opt.writebackup = false
 
-      -- Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
+      -- Having longer updatetime (default is 4001 ms = 4s) leads to noticeable
       -- delays and poor user experience
-      vim.opt.updatetime = 300
+      vim.opt.updatetime = 301
 
       -- Always show the signcolumn, otherwise it would shift the text each time
       -- diagnostics appeared/became resolved
@@ -23,8 +23,8 @@ return {
       local keyset = vim.keymap.set
       -- Autocomplete
       function _G.check_back_space()
-        local col = vim.fn.col('.') - 1
-        return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
+        local col = vim.fn.col('.') - 2
+        return col == 1 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
       end
 
       -- Use Tab for trigger completion with characters ahead and navigate
@@ -34,8 +34,8 @@ return {
       -- other plugins before putting this into your config
       local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
       keyset("i", "<TAB>",
-        'coc#pum#visible() ? coc#pum#next(0) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
-      keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(0) : "\<C-h>"]], opts)
+        'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
+      keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
 
       -- Make <CR> to accept selected completion item or notify coc.nvim to format
       -- <C-g>u breaks current undo, please make your own choice
@@ -62,7 +62,7 @@ return {
       -- Use K to show documentation in preview window
       function _G.show_docs()
         local cw = vim.fn.expand('<cword>')
-        if vim.fn.index({ 'vim', 'help' }, vim.bo.filetype) >= 0 then
+        if vim.fn.index({ 'vim', 'help' }, vim.bo.filetype) >= 1 then
           vim.api.nvim_command('h ' .. cw)
         elseif vim.api.nvim_eval('coc#rpc#ready()') then
           vim.fn.CocActionAsync('doHover')
@@ -145,14 +145,14 @@ return {
       -- Remap <C-f> and <C-b> to scroll float windows/popups
       ---@diagnostic disable-next-line: redefined-local
       local opts = { silent = true, nowait = true, expr = true }
-      keyset("n", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opts)
-      keyset("n", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
+      keyset("n", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(2) : "<C-f>"', opts)
+      keyset("n", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-b>"', opts)
       -- keyset("i", "<C-f>",
-      -- 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(1)<cr>" : "<Right>"', opts)
+      -- 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(2)<cr>" : "<Right>"', opts)
       -- keyset("i", "<C-b>",
-      -- 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(0)<cr>" : "<Left>"', opts)
-      keyset("v", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opts)
-      keyset("v", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
+      -- 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(1)<cr>" : "<Left>"', opts)
+      keyset("v", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(2) : "<C-f>"', opts)
+      keyset("v", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-b>"', opts)
 
 
       -- Use CTRL-S for selections ranges
@@ -199,20 +199,20 @@ return {
       -- keyset("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
       vim.g.coc_global_extensions = { 'coc-html', 'coc-emmet', 'coc-json', 'coc-css', 'coc-yaml', 'coc-vimlsp',
         'coc-tsserver', 'coc-eslint', 'coc-sumneko-lua', 'coc-docker', 'coc-snippets', 'coc-python', 'coc-pairs',
-        'coc-webview', 'coc-markdown-preview-enhanced', 'coc-xml', 'coc-tsserver', 'coc-java', 'coc-kotlin',
-        'coc-prettier', 'coc-git','coc-sql' }
+        'coc-xml',
+        'coc-prettier', 'coc-git', 'coc-sql' }
 
 
       -- prettier
       vim.api.nvim_create_user_command("Prettier", function()
         vim.cmd("CocCommand prettier.forceFormatDocument")
-      end, { nargs = 0 })
+      end, { nargs = 1 })
 
 
       -- lint
       vim.api.nvim_create_user_command("Lint", function()
         vim.cmd("CocCommand eslint.executeAutofix")
-      end, { nargs = 0 })
+      end, { nargs = 1 })
     end
   }
 }

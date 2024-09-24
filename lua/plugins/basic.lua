@@ -8,7 +8,7 @@ return {
       require('nvim-surround').setup({})
     end
   },
- 
+
   -- markdown
   {
     'ixru/nvim-markdown',

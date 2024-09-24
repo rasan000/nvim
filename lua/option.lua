@@ -24,7 +24,6 @@ vim.opt.encoding = "utf-8"
 -- 行番号
 vim.opt.number = true
 vim.opt.swapfile = false
-vim.opt.relativenumber = false
 
 -- タブを2文字に設定する
 vim.opt.tabstop = 2
@@ -76,22 +75,5 @@ vim.api.nvim_set_keymap('i', 'ｊｊ', '<ESC><Cmd>:call system("${zenhan} 0")<CR
 vim.api.nvim_set_keymap('i', 'jj', '<ESC><Cmd>:call system("${zenhan} 0")<CR>', { noremap = true })
 vim.api.nvim_set_keymap('i', 'っ', '<ESC><Cmd>:call system("${zenhan} 0")<CR>', { noremap = true })
 
--- 開いた時にカレントディレクトリを変更する
--- vim.api.nvim_create_autocmd("VimEnter", {
---   pattern = "*",
---   callback = function()
---     vim.cmd("lcd " .. vim.fn.expand("%:p:h"))
---   end,
--- })
---
--- -- 開いたときにnvim-treeを開く
--- -- ちょっと邪魔な時があるので気が向くまでOFF
--- vim.api.nvim_create_autocmd("VimEnter", {
---  pattern = "*",
---  callback = function()
---    vim.cmd("NvimTreeOpen")
---  end,
--- })
-
 -- 少し透明にする
-vim.opt.winblend = 10
+-- vim.opt.winblend = 10
