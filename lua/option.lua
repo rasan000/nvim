@@ -5,6 +5,16 @@ vim.opt.wildmenu = true
 -- 折り返し無し
 -- vim.opt.wrap = false
 
+-- 折り畳み
+vim.opt.foldmethod = 'indent'
+vim.opt.foldlevel = 99 -- 追加
+vim.keymap.set("n", "<Tab>", "zo")
+vim.keymap.set("n", "<S-Tab>", "zc")
+vim.keymap.set("n", "<Leader><Tab>", "zR")
+vim.keymap.set("n", "<Leader><S-Tab>", "zM")
+
+
+
 -- netrwを無効化
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -76,4 +86,4 @@ vim.api.nvim_set_keymap('i', 'jj', '<ESC><Cmd>:call system("${zenhan} 0")<CR>', 
 vim.api.nvim_set_keymap('i', 'っ', '<ESC><Cmd>:call system("${zenhan} 0")<CR>', { noremap = true })
 
 -- 少し透明にする
--- vim.opt.winblend = 10
+vim.opt.winblend = 10

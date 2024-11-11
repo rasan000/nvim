@@ -46,9 +46,8 @@ return {
     'github/copilot.vim',
     config = function()
       -- tabは無効
-      vim.g.copilot_no_tab_map = true
-      vim.api.nvim_set_keymap("i", "<Right>", 'copilot#Accept("<CR>")',
-        { silent = true, expr = true, script = true, replace_keycodes = false })
+      vim.g.copilot_assume_mapped = true
+      -- vim.api.nvim_set_keymap("i", "<Tab>", 'copilot#Accept("<CR>")', { silent = true, expr = true, script = true, replace_keycodes = false })
       -- vim.api.nvim_set_keymap("i", "<C-j>", "<Plug>(copilot-accept-word)", { silent = true })
       -- vim.api.nvim_set_keymap("i", "<C-d>", "<Plug>(copilot-dismiss)",{ silent = true })
       -- vim.api.nvim_set_keymap("i", "<C-s>", "<Plug>(copilot-suggest)",{ silent = true })

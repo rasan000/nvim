@@ -7,7 +7,7 @@ vim.api.nvim_set_keymap('v', 'j', 'gj', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', 'k', 'gk', { noremap = true, silent = true })
 
 -- ハイライトを消す
-vim.api.nvim_set_keymap('n', '<leader>n', '<Cmd>noh<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<ESC><ESC>', '<Cmd>noh<CR>', { noremap = true, silent = true })
 
 --- 全て選択
 vim.api.nvim_set_keymap('n', '<C-a>', 'ggVG', { noremap = true, silent = true })
@@ -19,6 +19,8 @@ vim.api.nvim_set_keymap('n', '<a-x>', '<C-x>', { noremap = true, silent = true }
 -- ノーマルモードのみコロンをセミコロン
 vim.api.nvim_set_keymap('n', ';', ':', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', ';', ':', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', ':', ';', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', ':', ';', { noremap = true, silent = true })
 
 -- ウィンドウ分割
 vim.api.nvim_set_keymap('n', 'ss', ':split<Return><C-w>w', { noremap = true, silent = true })
@@ -35,10 +37,10 @@ vim.api.nvim_set_keymap('n', 'x', '"_x', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', 'x', '"_x', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'X', '"_X', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', 'X', '"_X', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 's', '"_s', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', 's', '"_s', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'S', '"_S', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', 'S', '"_S', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 's', '<nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', 's', '<nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'S', '<nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', 'S', '<nop>', { noremap = true, silent = true })
 
 -- 切り取り時は0レジスタにいれる
 vim.api.nvim_set_keymap('n', 'd', '"0d', { noremap = true, silent = true })

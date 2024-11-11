@@ -17,9 +17,6 @@ return {
       -- diagnostics appeared/became resolved
       vim.opt.signcolumn = "yes"
 
-      -- copilotの誤動作を防ぐ
-      vim.g.copilot_no_tab_map = true
-
       local keyset = vim.keymap.set
       -- Autocomplete
       function _G.check_back_space()
@@ -33,9 +30,9 @@ return {
       -- NOTE: Use command ':verbose imap <tab>' to make sure Tab is not mapped by
       -- other plugins before putting this into your config
       local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
-      keyset("i", "<TAB>",
+      keyset("i", "<C-n>",
         'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
-      keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
+      keyset("i", "<C-p>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
 
       -- Make <CR> to accept selected completion item or notify coc.nvim to format
       -- <C-g>u breaks current undo, please make your own choice
@@ -88,8 +85,8 @@ return {
 
 
       -- Formatting selected code
-      keyset("x", "<leader>f", "<Plug>(coc-format-selected)", { silent = true })
-      keyset("n", "<leader>f", "<Plug>(coc-format-selected)", { silent = true })
+      keyset("x", "<leader>fo", "<Plug>(coc-format-selected)", { silent = true })
+      keyset("n", "<leader>fo", "<Plug>(coc-format-selected)", { silent = true })
 
 
       -- Setup formatexpr specified filetype(s)
@@ -200,7 +197,7 @@ return {
       vim.g.coc_global_extensions = { 'coc-html', 'coc-emmet', 'coc-json', 'coc-css', 'coc-yaml', 'coc-vimlsp',
         'coc-tsserver', 'coc-eslint', 'coc-sumneko-lua', 'coc-docker', 'coc-snippets', 'coc-python', 'coc-pairs',
         'coc-xml',
-        'coc-prettier', 'coc-git', 'coc-sql' }
+        'coc-prettier', 'coc-git', 'coc-sql', 'coc-kotlin' }
 
 
       -- prettier

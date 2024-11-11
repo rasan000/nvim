@@ -9,6 +9,19 @@ return {
     end
   },
 
+  --scroll
+  {
+    "karb94/neoscroll.nvim",
+    config = function()
+      require('neoscroll').setup({})
+    end
+  },
+  {
+    'gen740/SmoothCursor.nvim',
+    config = function()
+      require('smoothcursor').setup()
+    end
+  },
   -- markdown
   {
     'ixru/nvim-markdown',
@@ -84,10 +97,14 @@ return {
   {
     'easymotion/vim-easymotion',
     config = function()
-      vim.api.nvim_set_keymap('n', 'f', '<Plug>(easymotion-overwin-f)', {})
+      vim.api.nvim_set_keymap('n', 'f', '<Plug>(easymotion-fl)', {})
+      vim.api.nvim_set_keymap('n', 'F', '<Plug>(easymotion-Fl)', {})
+      vim.api.nvim_set_keymap('n', '<leader>s', '<Plug>(easymotion-overwin-f)', {})
       vim.api.nvim_set_keymap('n', '<leader>s', '<Plug>(easymotion-overwin-f2)', {})
       vim.api.nvim_set_keymap('n', '<leader>w', '<Plug>(easymotion-overwin-w)', {})
       vim.api.nvim_set_keymap('n', '<leader>l', '<Plug>(easymotion-overwin-line)', {})
+      vim.api.nvim_set_keymap('n', '<leader>j', '<Plug>(easymotion-j)', {})
+      vim.api.nvim_set_keymap('n', '<leader>k', '<Plug>(easymotion-k)', {})
     end
   },
 
