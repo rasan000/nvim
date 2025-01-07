@@ -16,11 +16,6 @@ vim.api.nvim_set_keymap('n', '<C-a>', 'ggVG', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<a-a>', '<C-a>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<a-x>', '<C-x>', { noremap = true, silent = true })
 
--- ノーマルモードのみコロンをセミコロン
-vim.api.nvim_set_keymap('n', ';', ':', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', ';', ':', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', ':', ';', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', ':', ';', { noremap = true, silent = true })
 
 -- ウィンドウ分割
 vim.api.nvim_set_keymap('n', 'ss', ':split<Return><C-w>w', { noremap = true, silent = true })
